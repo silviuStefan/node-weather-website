@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const forecastService = require('./utils/forecast-service')
 
 const app = express()
+const PORT = process.env.PORT || 3000
 
 // Define paths for Express Config
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -69,7 +70,6 @@ app.get('*', (req, res) => {
     })
 })
 
-const PORT = 3000;
 app.listen(PORT, () => {
     console.log('STARTED on port ', PORT)
 })
